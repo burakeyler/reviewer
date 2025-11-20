@@ -1425,4 +1425,20 @@ document.addEventListener('DOMContentLoaded', () => {
       navigateFiles('down');
     }
   });
+
+  // Electron integration - listen for IPC messages
+  if (window.electronAPI) {
+    // Handle "Open Repository" from menu
+    window.electronAPI.onOpenRepository((path) => {
+      document.getElementById('repoPath').value = path;
+      loadRepo();
+    });
+
+    // Handle "Submit Review" from menu
+    window.electronAPI.onSubmitReview(() => {
+      submitReview();
+    });
+
+    console.log('Electron integration enabled');
+  }
 });

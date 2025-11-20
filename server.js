@@ -6,7 +6,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const app = express();
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 
 app.use(cors());
 app.use(express.json());

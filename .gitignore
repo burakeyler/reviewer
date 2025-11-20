@@ -1,5 +1,6 @@
 node_modules/
 repos/
 reviews/
+dist/
 .DS_Store
 *.log
