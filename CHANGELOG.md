@@ -13,6 +13,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- **`reviewer export --file` accepts the path however it is spelled.** `./src/auth.js`,
+  `src//auth.js`, `srcuth.js` and absolute paths inside the repository used to
+  fail with "no comments" because the match was literal; they now resolve to the
+  stored repo-relative path.
+
+### Fixed
+
 - **A comment anchored on a Markdown code fence no longer corrupts the agent
   prompt.** `reviewer export --format prompt` wrapped every anchor and
   selection in a hard-coded three-backtick fence. When the reviewed line was
